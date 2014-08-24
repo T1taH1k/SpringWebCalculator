@@ -10,7 +10,7 @@
 <h2>SpringMVC Calculator </h2>
 <p><i>JPS Realization</i></p>
 <hr/>
-<form method="POST" action="calculate">
+<form method="POST" action="calculateJSP">
     <label>Enter First Number :</label>
     <input type="text" id="firstnumber" name="firstnumber" /><br/>
     <label>Operator</label>
@@ -24,6 +24,7 @@
     <input type="text" id="secondnumber" name="secondnumber" /><br/>
     <input type="submit" value="Result" />
 </form>
-<p><a href="index">Return to index page</a></p>
+<p><a href=${pageContext.request.contextPath}>Return to index page</a></p>
+<H2>${value}</H2>
 </body>
 </html>
