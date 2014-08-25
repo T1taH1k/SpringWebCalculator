@@ -40,25 +40,3 @@ function Clear ()
     var DecFlag = false;
 
 }
-
-$(document).ready(function() {
-
-    $('#btnEquals').click(function() {
-
-        var firstnumber = $('#firstnumber').val();
-        var secondnumber = $('#secondnumber').val();
-        var operator = $('#operator').val();
-        var json = { "firstnumber" : firstnumber, "secondnumber" : secondnumber, "operator": operator};
-
-        $.ajax({
-            url: "calculateHTML",
-            data: JSON.stringify(json),
-            method: "POST",
-
-            success: function(responce) {
-                 $('<p>'+response+'</p>').appendTo('#calc');
-            }
-        });
-        return false;
-    });
-});

@@ -19,16 +19,11 @@ public class CalculatorController {
     @Autowired
     private CalculatorService Calculator;
 
-    @RequestMapping(value = {"/index", "/"})
-    public String indexPage1() {
-        return "index";
-    }
-
-    @RequestMapping(value = "/calcjsp")
+    @RequestMapping(value = "/calcJsp")
     public String calcJspPage() { return "calcjsp"; }
 
-    @RequestMapping(value = "/calchtml")
-    public String calcHtmlPage() {return "calchtml"; }
+    @RequestMapping(value = "/calcAjax")
+    public String calcHtmlPage() {return "calcAjax"; }
 
     @RequestMapping(value = "/calculateJSP", method= RequestMethod.POST)
     public String getJSPPage(HttpServletRequest request, Model model) {
@@ -43,8 +38,9 @@ public class CalculatorController {
         return "calcjsp";
     }
 
-    @RequestMapping(value = "calculateHTML", method= RequestMethod.POST)
-    public @ResponseBody String getHTMLPage(HttpServletRequest request) {
+    @RequestMapping(value = "/calculateHTML", method= RequestMethod.POST)
+    @ResponseBody
+    public String getHTMLPage(HttpServletRequest request) {
 
         String firstNumber=request.getParameter("firstnumber");
         String operatorSign=request.getParameter("operator");

@@ -1,9 +1,12 @@
 package org.test;
 
 import org.springframework.stereotype.Service;
+import org.apache.log4j.Logger;
 
 @Service
 public class CalculatorService {
+
+    private static final Logger log = Logger.getLogger(CalculatorService.class);
 
     String doCalculation(String a, String b, char sign) {
         String result = "Result :";
@@ -12,20 +15,25 @@ public class CalculatorService {
         double output;
 
         switch (sign) {
-            case '+':
+            case 'a':
                 output = firstNumber + secondNumber;
+                log.info("Add two numbers");
                 break;
-            case '-':
+            case 's':
                 output = firstNumber - secondNumber;
+                log.info("Substract two numbers");
                 break;
-            case '*':
+            case 'm':
                 output = firstNumber * secondNumber;
+                log.info("Multiply two numbers");
                 break;
-            case '/':
+            case 'd':
                 output = firstNumber / secondNumber;
+                log.info("Divide two numbers");
                 break;
             default:
                 output = 0.00;
+                log.info("Miss one or both parameters");
         }
         return (result + output);
     }

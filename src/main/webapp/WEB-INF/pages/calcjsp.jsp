@@ -15,10 +15,10 @@
     <input type="text" id="firstnumber" name="firstnumber" /><br/>
     <label>Operator</label>
     <select name="operator"  id="operator">
-        <option value="+" selected="selected">Add [+]</option>
-        <option value="-">Subtract [-]</option>
-        <option value="/">Divide [/]</option>
-        <option value="*">Multiply [*]</option>
+        <option value="a" selected="selected">Add [+]</option>
+        <option value="s">Subtract [-]</option>
+        <option value="d">Divide [/]</option>
+        <option value="m">Multiply [*]</option>
     </select><br/>
     <label>Enter Second Number :</label>
     <input type="text" id="secondnumber" name="secondnumber" /><br/>
