@@ -1,17 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>SpringMVC Calculator</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/calchtml.css"/>
 </head>
 <body>
 <h2>SpringMVC Calculator </h2>
 <p><i>HTML/JS Realization</i></p>
 <hr/>
 
-<link rel="stylesheet" type="text/css" href="resources/css/calchtml.css"/>
-
-<form id="calc" name="calc" action="" method="POST">
+<form name="calc" action="calculateHTML" method="post">
     <table class="tblCalc" cellpadding=0 cellspacing=0>
         <tr>
             <td colspan=5 align=middle>
@@ -20,8 +22,8 @@
         </tr>
         <tr>
             <td colspan=5 align=middle>
-                <input style="visibility: hidden" id="operator" name="operator" type="Text"
-                       value = "+" size=28 width="250px">
+            <input style="visibility: hidden" id="operator" name="operator" type="Text"
+                  value = "+" size=28 width="250px">
 
             </td>
         </tr>
@@ -72,19 +74,17 @@
                        value="0" onclick="NumPressed(0)"></td>
             <td><input name="btnDecimal" type="Button"
                        value="." onclick="Decimal()"></td>
-            <td><input name="btnEquals" type="Button"
+            <td><input name="btnEquals" type="submit"
                        value="="></td>
             <td align=middle><input name="btnDivide" type="Button"
                                     value=" / " onclick="Operation('/')" /></td>
         </tr>
     </table>
-    <p><a href="index.html">Return to index page</a></p>
-
+    <p><a href="${pageContext.request.contextPath}">Return to index page</a></p>
+    <H2>${value}</H2>
 </form>
 
-<div id="content"></div>
-
-<script type='text/javascript' src='resources/js/calc.js' url=''></script>
+<script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/calc.js' url=''></script>
 
 </body>
 </html>
