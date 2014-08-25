@@ -5,21 +5,25 @@ $(document).ready(function() {
         var firstnumber = $('#firstnumber').val();
         var secondnumber = $('#secondnumber').val();
         var operator = $('#operator').val();
-        operator = operator == '+' ? 'a' :
-                operator == '-' ? 's' :
-                operator == '/' ? 'd' :
-                operator == '*' ? 'm' : '';
+        //operator = operator == '+' ? 'a' :
+          //      operator == '-' ? 's' :
+            //    operator == '/' ? 'd' :
+              //  operator == '*' ? 'm' : '';
         var json = { "firstnumber" : firstnumber, "secondnumber" : secondnumber, "operator": operator};
 
         $.ajax({
+
             url: "dynamic/calculateHTML",
-            data: JSON.stringify(json),
+            data: json,
             method: "POST",
 
             success: function(response) {
-                $('<p>'+response+'</p>').appendTo('#calc');
+                //$('#calc').append("<p>" + response + "</p>");
+                $('#res').text(response);
+                $('#secondnumber').val(0);
+
             }
         });
-        return false;
+
     });
 });

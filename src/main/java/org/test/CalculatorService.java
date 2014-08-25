@@ -15,19 +15,19 @@ public class CalculatorService {
         double output;
 
         switch (sign) {
-            case 'a':
+            case '+':
                 output = firstNumber + secondNumber;
                 log.info("Add two numbers");
                 break;
-            case 's':
+            case '-':
                 output = firstNumber - secondNumber;
                 log.info("Substract two numbers");
                 break;
-            case 'm':
+            case '*':
                 output = firstNumber * secondNumber;
                 log.info("Multiply two numbers");
                 break;
-            case 'd':
+            case '/':
                 output = firstNumber / secondNumber;
                 log.info("Divide two numbers");
                 break;

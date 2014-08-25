@@ -38,5 +38,6 @@ function Clear ()
     Fcalc.operator.value = "+";
     var OpFlag = false;
     var DecFlag = false;
+    $('#res').text("");
 
 }
